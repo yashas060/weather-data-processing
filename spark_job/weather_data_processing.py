@@ -4,6 +4,7 @@ import os, datetime
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, from_unixtime, to_timestamp
 
+
 def main():
     # —────────────── CONFIG ─────────────────────────────────────────
     project      = "eastern-entity-485416-t6"
@@ -14,7 +15,7 @@ def main():
     today        = datetime.date.today().strftime("%Y-%m-%d")
     input_path   = f"gs://{bucket}/weather/{today}/forecast.csv"
 
-    # —──────────── SPARK SESSION ───────────────────────────────────
+    # —──────────── SPARK SESSION 1───────────────────────────────────
     spark = (
         SparkSession.builder
           .appName("WeatherDataProcessing")
